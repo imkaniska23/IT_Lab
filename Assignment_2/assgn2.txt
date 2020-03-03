@@ -1,0 +1,13 @@
+Write an HTML program to create your own website registration page(login and password) using the following HTML features:
+(password should have a length of 8, having one upper case, one lower case letter, one numeric character and two special characters)
+
+-> Hyperlink
+-> Form
+-> Table
+-> Ordered List
+-> Text Box
+-> Text Area Box
+-> Check Box
+-> Password Field (above restrictions of password)
+-> Submit + Reset Button
+-> Radio Button

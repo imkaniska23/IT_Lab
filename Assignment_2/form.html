@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Assignment 2</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function formValidate()
+            {
+                var name    = document.querySelector("#name").value;
+                var about   = document.querySelector("#about").value;
+                var pwd     = document.querySelector("#password").value;
+                var paswd   =  /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=(.*[!@#$%^&*]){2})[a-zA-Z0-9!@#$%^&*]{8,8}$/;
+                var tnc     = document.querySelector("#tnc");
+                if(name.length<=3)
+                {
+                    alert("Name should be of at least four characters.");
+                    return false;
+                }
+                else if(about.length<10)
+                {
+                    alert("About should be of at least ten characters");
+                    return false;
+                }
+                else if(!pwd.match(paswd))
+                {
+                    alert("Password must contain at least one uppercase, one lowercase, one numeric and two special characters and should of length 8");
+                    return false;
+                }
+                else if(!tnc.checked)
+                {
+                    alert("You must accept our terms and conditions!");
+                    return false;
+                }
+                else
+                    return true;
+                
+            }
+        </script>
+        <div id="main">
+            <a href="https://www.google.com">This is a hyperlink</a>
+            <h1>This is a table.</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kumar Kaniska</td>
+                        <td>16CS8019</td>
+                    </tr>
+                    <tr>
+                        <td>Tanmoy Ghosh</td>
+                        <td>16CS8016</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>This is an Ordered list</h1>
+            <ol>
+                <li>Apple</li>
+                <li>Banana</li>
+            </ol>
+            <form action="" onsubmit="formValidate()">
+                <h1>Form for testing validation.</h1>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <br><br>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <br><br>
+                <label for="about">Tell me something about yourself:</label>
+                <br>
+                <textarea rows="4" cols="50" name="about" id="about"></textarea>
+                <br><br>
+                <label for="">Gender</label>
+                <br>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+                <br><br>
+                <input type="checkbox" id="tnc" name="tnc" value="tnc">
+                <label for="tnc">Accept terms and conditions.</label>
+                <br><br>
+                <input type="submit">
+                <br><br>
+                <input type="reset">
+            </form>
+        </div>
+    </body>
+</html>
